@@ -9,8 +9,9 @@ function Home() {
              type="text"
               name="name"
                placeholder='Enter search name'
-               className='input w-full input-lg bg-gray-200 text-black'/>
-            <button className='btn btn-lg w-36 rounded-l-none absolute top-0 right-0' type="submit">GO</button>
+               className='input w-full input-lg bg-gray-200 text-black focus:outline-none	'/>
+            <button className='btn btn-lg w-36 rounded-l-none absolute top-0 right-0' 
+            type="submit">GO</button>
         </div>
           </form>
       </div>
