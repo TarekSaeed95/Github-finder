@@ -1,34 +1,48 @@
-import {createContext, useState} from "react"
+import {useReducer, createContext} from "react"
+import reducer from "./DataReducers";
 
 const DataContext=createContext();
 export function DataProvider({children}){
-    const [searchName,setSearchName]=useState("")
-    const [loading,setLoading]=useState(true)
-    const [userList,setUserList]=useState([])
-
+    const initialState={
+        searchName:"",
+        loading:false,
+        userList:[]
+    }
+    const[state,dispatch]=useReducer(reducer,initialState)
     function inputChangeHandler(e){
-        setSearchName(e.target.value)
+        dispatch({
+            type:"input-change-Handler",
+            payload:e.target.value
+        })
 
     }
     function clearHandler(e){
         e.preventDefault()
-        setUserList([])
-        setSearchName("")
+        dispatch({
+            type:"clear",
+            setUser:[],
+            modifySearch:""
+        })
     }
     const  searchHandler=async (e)=>{
         e.preventDefault()
+        dispatch({
+            type:"setLoading",
+            
+        })
         const params=new URLSearchParams({
-            q:searchName
+            q:state.searchName
         })
         const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/search/users?${params}`)
         const {items}= await response.json()
-        setUserList(items)
-        console.log(userList)
-
+        dispatch({
+            type:"submit",
+            fetching:items,
+        })
     }
 
     return <DataContext.Provider value={{
-        searchName,userList,loading,searchHandler,inputChangeHandler,clearHandler
+        searchName:state.searchName,userList:state.userList,loading:state.loading,searchHandler,inputChangeHandler,clearHandler
     }}>{children}</DataContext.Provider>
 }
 
