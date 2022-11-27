@@ -10,8 +10,10 @@ export function DataProvider({children}){
         setSearchName(e.target.value)
 
     }
-    function clearHandler(){
+    function clearHandler(e){
+        e.preventDefault()
         setUserList([])
+        setSearchName("")
     }
     const  searchHandler=async (e)=>{
         e.preventDefault()
