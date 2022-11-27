@@ -10,6 +10,9 @@ export function DataProvider({children}){
         setSearchName(e.target.value)
 
     }
+    function clearHandler(){
+        setUserList([])
+    }
     const  searchHandler=async (e)=>{
         e.preventDefault()
         const params=new URLSearchParams({
@@ -23,7 +26,7 @@ export function DataProvider({children}){
     }
 
     return <DataContext.Provider value={{
-        searchName,userList,loading,searchHandler,inputChangeHandler,
+        searchName,userList,loading,searchHandler,inputChangeHandler,clearHandler
     }}>{children}</DataContext.Provider>
 }
 
