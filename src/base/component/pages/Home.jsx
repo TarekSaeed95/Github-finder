@@ -3,10 +3,14 @@ import DataContext from '../../context/DataContext'
 import { useContext } from 'react'
 import UserList from '../UserList'
 import Image from "../../../imgs/YlWC.gif"
+import Error from "../Error"
+import ErrorContext from "../../context/ErrorContext"
 function Home() {
         const{loading,searchName,userList,inputChangeHandler,searchHandler,clearHandler}=useContext(DataContext)
+        const{type}=useContext(ErrorContext)
   return (
     <div className={`flex flex-col container p-8 mx-auto container p-8 h-screen ${userList.length===0&&"justify-center"}`}>
+      {type!=="null"&&<Error/>}
       <div className="grid grid-cols-1 md:grid-cols-2  items-center mb-5">
           <form action="">
         <div className="form-control relative flex  md:flex-row flex-col   flex-row justify-between ">
@@ -28,6 +32,7 @@ function Home() {
         </div>
           </form>
       </div>
+
      {userList.length>0&&<UserList/>}
 
       </div>

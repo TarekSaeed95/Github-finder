@@ -1,8 +1,10 @@
+import { useContext } from "react";
 import {useReducer, createContext} from "react"
-import reducer from "./DataReducers";
-
+import ErrorContext from "./ErrorContext";
+import reducer from "./GithubReducers";
 const DataContext=createContext();
 export function DataProvider({children}){
+    const{genError}=useContext(ErrorContext)
     const initialState={
         searchName:"",
         loading:false,
@@ -14,7 +16,6 @@ export function DataProvider({children}){
             type:"input-change-Handler",
             payload:e.target.value
         })
-
     }
     function clearHandler(e){
         e.preventDefault()
@@ -26,25 +27,32 @@ export function DataProvider({children}){
     }
     const  searchHandler=async (e)=>{
         e.preventDefault()
-        dispatch({
-            type:"setLoading",
+        if(state.searchName===""){
+            genError("error","Try to put name")
+        }
+        if(state.searchName!==""){
+            dispatch({
+                type:"setLoading",
+            })
+            const params=new URLSearchParams({
+                q:state.searchName
+            })
+            const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/search/users?${params}`)
+
             
-        })
-        const params=new URLSearchParams({
-            q:state.searchName
-        })
-        const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/search/users?${params}`)
-        const {items}= await response.json()
-        dispatch({
-            type:"submit",
-            fetching:items,
-        })
+            const {items}= await response.json()
+            dispatch({
+                type:"submit",
+                fetching:items,
+            })
+        }
+
     }
 
     return <DataContext.Provider value={{
         searchName:state.searchName,userList:state.userList,loading:state.loading,searchHandler,inputChangeHandler,clearHandler
     }}>{children}</DataContext.Provider>
-}
 
+}
 
 export default DataContext
