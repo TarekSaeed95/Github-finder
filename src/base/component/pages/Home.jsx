@@ -1,18 +1,16 @@
 import React from 'react'
-import DataContext from '../../context/DataContext'
+import GithubContext from '../../context/Github/GithubContext'
 import { useContext } from 'react'
-import UserList from '../UserList'
+import UserList from '../user/UserList'
 import Image from "../../../imgs/YlWC.gif"
-import Error from "../Error"
-import ErrorContext from "../../context/ErrorContext"
+import Alert from "../Alert"
 function Home() {
-        const{loading,searchName,userList,inputChangeHandler,searchHandler,clearHandler}=useContext(DataContext)
-        const{type}=useContext(ErrorContext)
+        const{loading,searchName,userList,inputChangeHandler,searchHandler,clearHandler}=useContext(GithubContext)
   return (
-    <div className={`flex flex-col container p-8 mx-auto container p-8 h-screen ${userList.length===0&&"justify-center"}`}>
-      {type!=="null"&&<Error/>}
+    <div className={`flex flex-col container mb-10 p-8 home-screen mx-auto ${userList.length===0&&"justify-center "}`}>
+      <Alert/>
       <div className="grid grid-cols-1 md:grid-cols-2  items-center mb-5">
-          <form action="">
+        <form action="">
         <div className="form-control relative flex  md:flex-row flex-col   flex-row justify-between ">
             <input
              type="text"
@@ -24,16 +22,18 @@ function Home() {
             <button className='btn btn-lg w-36 rounded-l-none absolute top-0 right-0' 
             type="submit" 
             onClick={(e)=>searchHandler(e)}
+
             >{loading?<img className="w-16"  src={Image} alt="spinner"/>:"GO"}</button>
             
-            {searchName.length>0 &&<button onClick={(e)=>clearHandler(e)}
+            {searchName.length>0 &&<button onClick={clearHandler}
              className='clear btn btn-warning btn-lg w-36 mx-auto md:absolute'>
               Clear</button> }
         </div>
           </form>
       </div>
 
-     {userList.length>0&&<UserList/>}
+       {userList.length>0&&<UserList/>}
+     
 
       </div>
   )
