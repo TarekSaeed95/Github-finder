@@ -9,10 +9,10 @@ function About() {
       <h2 className="text-6xl">Github Finder
       </h2>
       <p>
-        A React App to search GitHub profiles and see profile details. This project is part of the React Front To Back Udemy course by Brad Traversy
+        A React App to search GitHub profiles and see profile details.
       </p>
       <p><span className="text-slate-500">Version:</span> 1.0.0</p>
-      <p><span className="text-slate-500">Layout By:</span> Tarek S.Ahmed</p>
+      <p><span className="text-slate-500">Layout By:</span> Tarek Fakhr-eldeen</p>
       </div>
     </div>
   )
