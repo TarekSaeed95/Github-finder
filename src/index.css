@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.container{
+    margin-inline : auto;
+}
+@media (min-width:800px){
+    .clear{
+        right: -200px;
+    }
+
+}
+.card.image-full::before{
+    opacity: 0.5;
+}
+.app{
+    min-height: 100vh;
+    padding-bottom: 100px;
+}
+.home-screen,
+.about-screen,
+.loading-screen,
+.notfound-screen{
+    /* min-height: calc(100vh - 136px - 76px); */
+}

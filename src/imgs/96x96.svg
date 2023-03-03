@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Creator Flevix.com -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="96px"
+	 height="96px" viewBox="0 0 150 150" enable-background="new 0 0 150 150" xml:space="preserve">
+
+
+<g id="Layer_3">
+	<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="96.91" y1="75.28" x2="145.39" y2="75.28">
+		<stop  offset="0" style="stop-color:#2484C6;stop-opacity:0"/>
+		<stop  offset="1" style="stop-color:#2484C6"/>
+	</linearGradient>
+	<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="95.41" y1="75.28" x2="146.89" y2="75.28">
+		<stop  offset="0" style="stop-color:#2484C6"/>
+		<stop  offset="1" style="stop-color:#2484C6;stop-opacity:0"/>
+	</linearGradient>
+	<path opacity="0.5" fill="url(#SVGID_3_)" stroke="url(#SVGID_4_)" stroke-width="3" stroke-miterlimit="10" d="M145.39,75.28
+		c0,31.15-20.35,57.55-48.48,66.62v-10.46c22.58-8.65,38.61-30.53,38.61-56.16s-16.03-47.51-38.61-56.16V8.66
+		C125.04,17.73,145.39,44.13,145.39,75.28z">
+
+		<animateTransform attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 75 75"
+                    to="-360 75 75"
+                    dur="1.5s"
+                    repeatCount="indefinite"/>
+	</path>
+</g>
+<g id="Layer_2">
+	<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="96.91" y1="75.28" x2="145.39" y2="75.28">
+		<stop  offset="0" style="stop-color:#2484C6;stop-opacity:0"/>
+		<stop  offset="1" style="stop-color:#2484C6"/>
+	</linearGradient>
+	<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="95.41" y1="75.28" x2="146.89" y2="75.28">
+		<stop  offset="0" style="stop-color:#2484C6"/>
+		<stop  offset="1" style="stop-color:#2484C6;stop-opacity:0"/>
+	</linearGradient>
+	<path opacity="0.5" fill="url(#SVGID_5_)" stroke="url(#SVGID_6_)" stroke-width="3" stroke-miterlimit="10" d="M145.39,75.28
+		c0,31.15-20.35,57.55-48.48,66.62v-10.46c22.58-8.65,38.61-30.53,38.61-56.16s-16.03-47.51-38.61-56.16V8.66
+		C125.04,17.73,145.39,44.13,145.39,75.28z">
+
+		<animateTransform attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 75 75"
+                    to="360 75 75"
+                    dur="1.5s"
+                    repeatCount="indefinite"/>
+	</path>
+</g>
+</svg>
