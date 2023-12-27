@@ -16,7 +16,7 @@ export default function App() {
     <AlertProvider>
     <GithubProvider>
     <Router>
-    <IntercomProvider appId={'brlqbwx4'}>
+    <IntercomProvider appId={'qgglww7a'}>
       <div className="relative flex justify-center app">
       <Header />
       <Routes>
