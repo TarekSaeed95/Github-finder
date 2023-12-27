@@ -14,6 +14,9 @@ function Home() {
     clearHandler,
   } = useContext(GithubContext);
   console.log(window.innerWidth);
+  window.Intercom('boot', { 
+    app_id: 'qgglww7a' 
+  });
   return (
     <div
       className={`flex flex-col container mb-10 p-8 home-screen my-48 md:my-20 mx-auto ${
@@ -21,9 +24,9 @@ function Home() {
       }`}
     >
       <Alert />
-      <div className="grid grid-cols-1 md:grid-cols-2  items-center mb-5">
+      <div className="grid items-center grid-cols-1 mb-5 md:grid-cols-2">
         <form action="">
-          <div className="form-control relative flex  md:flex-row flex-col   flex-row justify-between ">
+          <div className="relative flex flex-row flex-col justify-between form-control md:flex-row ">
             <input
               type="text"
               name="name"
@@ -32,10 +35,10 @@ function Home() {
               onChange={(e) => {
                 inputChangeHandler(e);
               }}
-              className="input w-full input-lg mb-5 md:mb-0 bg-gray-200 text-black focus:outline-none	placeholder:text-sm sm:placeholder:text-lg "
+              className="w-full mb-5 text-black bg-gray-200 input input-lg md:mb-0 focus:outline-none placeholder:text-sm sm:placeholder:text-lg "
             />
             <button
-              className="btn btn-lg sm:w-36 rounded-l-none absolute top-0 right-0"
+              className="absolute top-0 right-0 rounded-l-none btn btn-lg sm:w-36"
               type="submit"
               onClick={(e) => searchHandler(e)}
             >
