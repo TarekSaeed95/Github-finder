@@ -8,11 +8,15 @@ import { AlertProvider } from "./base/context/Alert/AlertContext";
 import UserInfo from "./base/component/pages/UserInfo";
 import React from "react";
 import Footer from "./base/component/Footer";
+
+import { IntercomProvider, useIntercom } from 'react-use-intercom';
+
 export default function App() {
   return (
     <AlertProvider>
     <GithubProvider>
     <Router>
+    <IntercomProvider appId={'qgglww7a'}>
       <div className="relative flex justify-center app">
       <Header />
       <Routes>
@@ -23,6 +27,8 @@ export default function App() {
       </Routes>
       <Footer></Footer>
       </div>
+      </IntercomProvider>
+
     </Router>
     </GithubProvider>
     </AlertProvider> 

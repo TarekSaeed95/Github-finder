@@ -4,6 +4,7 @@ import { useContext } from "react";
 import UserList from "../user/UserList";
 import Image from "../../../imgs/YlWC.gif";
 import Alert from "../Alert";
+import { useIntercom } from "react-use-intercom";
 function Home() {
   const {
     loading,
@@ -13,16 +14,15 @@ function Home() {
     searchHandler,
     clearHandler,
   } = useContext(GithubContext);
-  console.log(window.innerWidth);
-  window.Intercom('boot', { 
-    app_id: 'qgglww7a' 
-  });
+  const { boot, shutdown, hide, show, update } = useIntercom();
+
   return (
     <div
       className={`flex flex-col container mb-10 p-8 home-screen my-48 md:my-20 mx-auto ${
         userList.length === 0 && "justify-center "
       }`}
     >
+      <button onClick={boot}>Boot intercom! ☎️</button>;
       <Alert />
       <div className="grid items-center grid-cols-1 mb-5 md:grid-cols-2">
         <form action="">
