@@ -9,11 +9,17 @@ import UserInfo from "./base/component/pages/UserInfo";
 import React from "react";
 import Footer from "./base/component/Footer";
 export default function App() {
+  window.Intercom('boot', {
+    app_id: 'qgglww7a',
+    // name: data.user.username,
+    // email: data.user.email,
+    // user_id: data.user.id,
+  })
   return (
     <AlertProvider>
     <GithubProvider>
     <Router>
-      <div className="app relative flex justify-center">
+      <div className="relative flex justify-center app">
       <Header />
       <Routes>
         <Route path="/" element={<Home/>}/>
