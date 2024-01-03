@@ -11,7 +11,13 @@ import Footer from "./base/component/Footer";
 
 import { IntercomProvider, useIntercom } from 'react-use-intercom';
 
+import Hotjar from '@hotjar/browser';
 export default function App() {
+
+const siteId = 3812167;
+const hotjarVersion = 6;
+
+Hotjar.init(siteId, hotjarVersion);
   return (
     <AlertProvider>
     <GithubProvider>
