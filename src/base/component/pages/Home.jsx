@@ -15,6 +15,22 @@ function Home() {
     clearHandler,
   } = useContext(GithubContext);
   const { boot, shutdown, hide, show, update } = useIntercom();
+  const submitHandler = (e) => {
+    e.preventDefault()
+    const formEle = document.querySelector('form')
+    const formData = new FormData(formEle)
+    console.log('first')
+    fetch(
+      'https://script.google.com/macros/s/AKfycbwnZryXkfDBqkCASFpwuBKoPaugqu9Qo089JgesDXiN9EDKV5VEF4IX0YEaEGgoBYTZ1A/exec',
+      {
+        method: 'POST',
+        body: formData,
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error))
+  }
 
   return (
     <div
@@ -58,6 +74,21 @@ function Home() {
               </button>
             )}
           </div>
+        </form>
+        <form onSubmit={submitHandler}>
+          <input type="number" name="Number" />
+
+          <button className="mx-auto  w-[168px] border-darkblue">
+            submit
+            {/* <a
+            className="block w-full text-inherit"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSetoFKr7Z5NtSbFDzZzguyKos1EhkXMZpPu4ReLjUocy03Fgg/viewform"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            {t(titles.gomla.fillForm)}
+          </a> */}
+          </button>
         </form>
       </div>
 
